@@ -9,9 +9,8 @@ useHead({
   </NuxtLayout>
 </template>
 <style>
-html,
-body,
-#__nuxt {
+/* stylelint-disable-next-line selector-id-pattern, @stylistic/selector-list-comma-newline-after */
+html, body, #__nuxt {
   height: 100vh;
   margin: 0;
   padding: 0;

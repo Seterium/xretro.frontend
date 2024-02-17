@@ -1,10 +1,63 @@
+/**
+ * {@link https://nuxt.com/docs/api/nuxt-config}
+ */
 export default defineNuxtConfig({
+  css: [],
+
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
-    '@nuxtjs/color-mode',
   ],
+
+  app: {
+    head: {
+      viewport: 'width=device-width,initial-scale=1',
+      link: [
+        {
+          rel: 'icon',
+          href: '/favicon.ico',
+          sizes: 'any' },
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/favicon.svg' },
+        {
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/apple-touch-icon.png',
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/favicon-32х32.png',
+          sizes: '32x32',
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/favicon-16x16.png',
+          sizes: '16x16',
+        },
+      ],
+      meta: [
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1',
+        },
+        {
+          name: 'description',
+          content: 'XRetro',
+        },
+      ],
+    },
+  },
+
+  ssr: false,
+
+  devServer: {
+    port: 4000,
+  },
 
   experimental: {
     payloadExtraction: false,
@@ -12,40 +65,11 @@ export default defineNuxtConfig({
     typedPages: true,
   },
 
-  css: [],
-
-  colorMode: {
-    classSuffix: '',
-  },
-
   nitro: {
     esbuild: {
       options: {
         target: 'esnext',
       },
-    },
-    prerender: {
-      crawlLinks: false,
-      routes: ['/'],
-      ignore: ['/hi'],
-    },
-  },
-
-  app: {
-    head: {
-      viewport: 'width=device-width,initial-scale=1',
-      link: [
-        { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
-        { rel: 'icon', type: 'image/svg+xml', href: '/nuxt.svg' },
-        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
-      ],
-      meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'App description' },
-        { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
-        { name: 'theme-color', media: '(prefers-color-scheme: light)', content: 'white' },
-        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#222222'},
-      ],
     },
   },
 
@@ -55,5 +79,5 @@ export default defineNuxtConfig({
 
   features: {
     inlineStyles: false,
-  }
+  },
 })

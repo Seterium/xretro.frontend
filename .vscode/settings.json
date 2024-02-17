@@ -1,37 +1,33 @@
 {
-  // Enable the ESlint flat config support
-  "eslint.experimental.useFlatConfig": true,
-
-  // Disable the default formatter, use eslint instead
-  "editor.formatOnSave": false,
-
-  // Auto fix
+  // Editor
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit",
     "source.organizeImports": "never"
   },
-
-  // Silent the stylistic rules in you IDE, but still auto fix them
-  "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off" },
-    { "rule": "*-indent", "severity": "off" },
-    { "rule": "*-spacing", "severity": "off" },
-    { "rule": "*-spaces", "severity": "off" },
-    { "rule": "*-order", "severity": "off" },
-    { "rule": "*-dangle", "severity": "off" },
-    { "rule": "*-newline", "severity": "off" },
-    { "rule": "*quotes", "severity": "off" },
-    { "rule": "*semi", "severity": "off" }
-  ],
-
-  // Enable eslint for all supported languages
+  "editor.formatOnSave": false,
+  // ESLint
+  "eslint.options": {
+    "overrideConfigFile": ".eslintrc.cjs"
+  },
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.codeActionsOnSave.mode": "problems",
   "eslint.validate": [
-    "javascript",
     "typescript",
     "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc"
-  ]
+  ],
+  // Stylelint
+  "stylelint.configFile": ".stylelintrc.cjs",
+  "stylelint.packageManager": "yarn",
+  "stylelint.snippet": [
+    "vue",
+    "css",
+    "scss"
+  ],
+  "stylelint.validate": [
+    "vue",
+    "css",
+    "scss",
+  ],
 }

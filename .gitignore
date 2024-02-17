@@ -1,7 +1,9 @@
 node_modules
 *.log
+*.error
 dist
 .output
 .nuxt
 .env
 .idea/
+.DS_Store

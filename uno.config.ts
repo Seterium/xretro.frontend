@@ -1,31 +1,15 @@
-import {
-  defineConfig,
-  presetAttributify,
-  presetIcons,
-  presetTypography,
-  presetUno,
-  presetWebFonts,
-  transformerDirectives,
-  transformerVariantGroup,
-} from 'unocss'
+import { defineConfig, presetIcons, presetUno } from 'unocss'
 
 export default defineConfig({
   shortcuts: [],
 
   presets: [
     presetUno({
-      prefix: 'uno-'
+      prefix: 'uno-',
+      variablePrefix: 'uno-',
     }),
     presetIcons({
-      scale: 1.2,
-    }),
-    presetTypography(),
-    presetWebFonts({
-      fonts: {
-        sans: 'DM Sans',
-        serif: 'DM Serif Display',
-        mono: 'DM Mono',
-      },
+      scale: 1,
     }),
   ],
 })
