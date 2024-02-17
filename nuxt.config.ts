@@ -1,27 +1,18 @@
-import { pwa } from './config/pwa'
-import { appDescription } from './constants/index'
-
 export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
-    '@vite-pwa/nuxt',
-    'nuxt-module-eslint-config',
   ],
 
   experimental: {
-    // when using generate, payload js assets included in sw precache manifest
-    // but missing on offline, disabling extraction it until fixed
     payloadExtraction: false,
     renderJsonPayloads: true,
     typedPages: true,
   },
 
-  css: [
-    '@unocss/reset/tailwind.css',
-  ],
+  css: [],
 
   colorMode: {
     classSuffix: '',
@@ -50,7 +41,7 @@ export default defineNuxtConfig({
       ],
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: appDescription },
+        { name: 'description', content: 'App description' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
         { name: 'theme-color', media: '(prefers-color-scheme: light)', content: 'white' },
         { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#222222'},
@@ -58,18 +49,11 @@ export default defineNuxtConfig({
     },
   },
 
-  pwa,
-
   devtools: {
     enabled: true,
   },
 
   features: {
-    // For UnoCSS
     inlineStyles: false,
-  },
-
-  eslintConfig: {
-    setup: false,
-  },
+  }
 })
